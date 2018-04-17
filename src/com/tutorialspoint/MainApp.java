@@ -7,5 +7,10 @@ public class MainApp {
       ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
       HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
       obj.getMessage();
+      
+      ClassPathXmlApplicationContext context2 = (ClassPathXmlApplicationContext)context;
+      if (context2 != null) {
+    	  context2.close();
+      }
    }
 }
